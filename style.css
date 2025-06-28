@@ -23,6 +23,50 @@ header {
     color: white;
 }
 
+.developer-info {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.flag {
+    font-size: 1.5rem;
+}
+
+.dev-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-icon {
+    font-size: 1.2rem;
+}
+
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -251,10 +295,136 @@ main {
     flex-wrap: wrap;
 }
 
+/* SEO Content Styles */
+.seo-content {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f8f9ff;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.seo-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.seo-content h3 {
+    color: #667eea;
+    margin: 25px 0 15px 0;
+    font-size: 1.4rem;
+}
+
+.seo-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.seo-content ul, .seo-content ol {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.seo-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Developer Section */
+.developer-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.developer-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.dev-avatar {
+    font-size: 3rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-details h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.dev-details p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.dev-contact {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.contact-icon {
+    font-size: 1.1rem;
+}
+
+/* Footer Styles */
 footer {
     text-align: center;
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+.footer-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.footer-content a {
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -271,6 +441,11 @@ footer {
         font-size: 2rem;
     }
     
+    .developer-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
     .info-grid {
         grid-template-columns: 1fr;
     }
@@ -282,6 +457,15 @@ footer {
     .btn {
         width: 100%;
         text-align: center;
+    }
+    
+    .developer-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .dev-contact {
+        justify-content: center;
     }
 }
 
@@ -306,4 +490,224 @@ footer {
 .contacts-list::-webkit-scrollbar-thumb:hover,
 .cleaned-list::-webkit-scrollbar-thumb:hover {
     background: #764ba2;
+}
+
+/* PWA Install Prompt */
+.pwa-install-prompt {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none;
+}
+
+.pwa-install-prompt.show {
+    display: block;
+}
+
+.pwa-install-prompt .prompt-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.pwa-install-prompt .prompt-text {
+    flex: 1;
+}
+
+.pwa-install-prompt .prompt-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.pwa-install-prompt .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.pwa-install-prompt .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1001;
+    max-width: 400px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-success {
+    border-left: 4px solid #28a745;
+}
+
+.notification-error {
+    border-left: 4px solid #dc3545;
+}
+
+.notification-info {
+    border-left: 4px solid #17a2b8;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.notification-message {
+    flex: 1;
+    color: #333;
+    font-weight: 500;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive for Notifications */
+@media (max-width: 768px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .pwa-install-prompt {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    .pwa-install-prompt .prompt-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .pwa-install-prompt .prompt-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* English Version Styles */
+html[lang="en"] body {
+    font-family: 'Inter', sans-serif;
+    direction: ltr;
+}
+
+html[lang="en"] .container {
+    text-align: left;
+}
+
+html[lang="en"] header h1, 
+html[lang="en"] header p {
+    text-align: center;
+}
+
+html[lang="en"] .seo-content {
+    text-align: left;
+}
+
+/* Language Switch Button */
+.language-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-switch a {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.language-switch a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* RTL Support for Arabic */
+html[lang="ar"] body {
+    direction: rtl;
+}
+
+html[lang="ar"] .container {
+    text-align: right;
+}
+
+html[lang="ar"] .language-switch {
+    left: 20px;
+    right: auto;
+}
+
+/* Responsive Language Switch */
+@media (max-width: 768px) {
+    .language-switch {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    html[lang="ar"] .language-switch {
+        left: auto;
+    }
 } 

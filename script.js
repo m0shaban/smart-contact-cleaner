@@ -2,12 +2,89 @@
 let contacts = [];
 let cleanedContacts = [];
 let originalContacts = [];
+let deferredPrompt;
 
 // تهيئة الأحداث عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
     initializeDragAndDrop();
     initializeFileInput();
+    initializePWA();
 });
+
+// تهيئة PWA
+function initializePWA() {
+    // استمع لحدث beforeinstallprompt
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // منع العرض التلقائي للـ prompt
+        e.preventDefault();
+        // حفظ الـ event للاستخدام لاحقاً
+        deferredPrompt = e;
+        
+        // عرض رسالة تثبيت مخصصة بعد 3 ثوان
+        setTimeout(() => {
+            showInstallPrompt();
+        }, 3000);
+    });
+    
+    // استمع لحدث appinstalled
+    window.addEventListener('appinstalled', (evt) => {
+        console.log('تم تثبيت التطبيق بنجاح!');
+        hideInstallPrompt();
+    });
+}
+
+// عرض رسالة تثبيت PWA
+function showInstallPrompt() {
+    // إنشاء عنصر رسالة التثبيت إذا لم يكن موجوداً
+    if (!document.getElementById('pwa-install-prompt')) {
+        const promptElement = document.createElement('div');
+        promptElement.id = 'pwa-install-prompt';
+        promptElement.className = 'pwa-install-prompt';
+        promptElement.innerHTML = `
+            <div class="prompt-content">
+                <div class="prompt-text">
+                    <strong>📱 تثبيت التطبيق</strong><br>
+                    <small>ثبت أداة تنظيف جهات الاتصال على هاتفك للوصول السريع</small>
+                </div>
+                <div class="prompt-actions">
+                    <button class="btn btn-primary" onclick="installPWA()">تثبيت</button>
+                    <button class="btn btn-secondary" onclick="hideInstallPrompt()">لاحقاً</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(promptElement);
+    }
+    
+    // عرض الرسالة
+    document.getElementById('pwa-install-prompt').classList.add('show');
+}
+
+// إخفاء رسالة تثبيت PWA
+function hideInstallPrompt() {
+    const promptElement = document.getElementById('pwa-install-prompt');
+    if (promptElement) {
+        promptElement.classList.remove('show');
+    }
+}
+
+// تثبيت PWA
+function installPWA() {
+    if (deferredPrompt) {
+        // عرض prompt التثبيت
+        deferredPrompt.prompt();
+        
+        // انتظار اختيار المستخدم
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('وافق المستخدم على تثبيت التطبيق');
+            } else {
+                console.log('رفض المستخدم تثبيت التطبيق');
+            }
+            deferredPrompt = null;
+        });
+    }
+    hideInstallPrompt();
+}
 
 // تهيئة خاصية السحب والإفلات
 function initializeDragAndDrop() {
@@ -50,7 +127,7 @@ function handleFile(file) {
     const fileExtension = fileName.split('.').pop().toLowerCase();
     
     if (fileExtension !== 'csv' && fileExtension !== 'vcf') {
-        alert('يرجى اختيار ملف CSV أو VCF فقط');
+        showNotification('يرجى اختيار ملف CSV أو VCF فقط', 'error');
         return;
     }
     
@@ -68,9 +145,34 @@ function handleFile(file) {
         document.getElementById('fileName').textContent = fileName;
         showFileInfo();
         showContactsPreview();
+        showNotification('تم تحميل الملف بنجاح!', 'success');
     };
     
     reader.readAsText(file, 'UTF-8');
+}
+
+// عرض إشعار
+function showNotification(message, type = 'info') {
+    // إنشاء عنصر الإشعار
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span>
+            <span class="notification-message">${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // إضافة الإشعار للصفحة
+    document.body.appendChild(notification);
+    
+    // إزالة الإشعار تلقائياً بعد 5 ثوان
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
 }
 
 // تحليل ملف CSV
@@ -272,13 +374,13 @@ function showContactsPreview() {
         
         let status = '';
         if (contact.isDuplicate && contact.hasNoName) {
-            status = '<span class="contact-status status-duplicate">مكرر + بدون اسم</span>';
+            status = '<span class="contact-status status-duplicate">🔄 مكرر + بدون اسم</span>';
         } else if (contact.isDuplicate) {
-            status = '<span class="contact-status status-duplicate">مكرر</span>';
+            status = '<span class="contact-status status-duplicate">🔄 مكرر</span>';
         } else if (contact.hasNoName) {
-            status = '<span class="contact-status status-no-name">بدون اسم</span>';
+            status = '<span class="contact-status status-no-name">❓ بدون اسم</span>';
         } else {
-            status = '<span class="contact-status status-clean">نظيف</span>';
+            status = '<span class="contact-status status-clean">✅ نظيف</span>';
         }
         
         contactItem.innerHTML = `
@@ -322,6 +424,7 @@ function cleanContacts() {
     
     // عرض النتائج
     showCleanedContacts();
+    showNotification(`تم تنظيف ${originalContacts.length - cleanedContacts.length} جهة اتصال!`, 'success');
 }
 
 // عرض جهات الاتصال النظيفة
@@ -339,7 +442,7 @@ function showCleanedContacts() {
                 <div class="contact-phone">${contact.phone}</div>
             </div>
             <div class="contact-status-container">
-                <span class="contact-status status-clean">نظيف</span>
+                <span class="contact-status status-clean">✅ نظيف</span>
             </div>
         `;
         
@@ -373,6 +476,7 @@ function downloadVCF() {
     });
     
     downloadFile(vcfContent, 'contacts_cleaned.vcf', 'text/vcard');
+    showNotification('تم تحميل ملف VCF بنجاح!', 'success');
 }
 
 // تحميل ملف CSV
@@ -385,6 +489,7 @@ function downloadCSV() {
     });
     
     downloadFile(csvContent, 'contacts_cleaned.csv', 'text/csv');
+    showNotification('تم تحميل ملف CSV بنجاح!', 'success');
 }
 
 // دالة التحميل العامة
@@ -412,4 +517,5 @@ function resetFile() {
     document.getElementById('cleanedContacts').style.display = 'none';
     
     document.getElementById('fileInput').value = '';
+    showNotification('تم إعادة تعيين الأداة', 'info');
 } 

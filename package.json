@@ -1,31 +1,41 @@
 {
   "name": "smart-contact-cleaner",
   "version": "1.0.0",
-  "description": "Free contact cleaner tool to remove duplicate phone numbers and contacts without names. Export VCF and CSV files compatible with Android.",
+  "description": "أداة تنظيف جهات الاتصال الذكية - حذف الأرقام المكررة وتنظيم جهات الاتصال للأندرويد. مطور بواسطة محمد شعبان - مصر",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",
-    "build": "echo 'No build process needed for static site'",
-    "deploy": "echo 'Deploy to GitHub Pages manually'"
+    "build": "echo 'No build step required for static site'",
+    "deploy": "echo 'Deploy to GitHub Pages'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'"
   },
   "keywords": [
     "contact-cleaner",
-    "remove-duplicate-contacts",
-    "organize-contacts",
-    "contact-management",
-    "vcf-export",
-    "csv-export",
-    "android-contacts",
-    "phone-number-cleaner",
-    "duplicate-remover",
-    "contact-organizer",
+    "duplicate-removal",
+    "vcf",
+    "csv",
+    "android",
+    "contacts",
+    "pwa",
+    "arabic",
+    "egypt",
+    "محمد-شعبان",
     "تنظيف-جهات-الاتصال",
     "حذف-الأرقام-المكررة",
-    "تنظيم-جهات-الاتصال"
+    "تنظيم-جهات-الاتصال",
+    "تصدير-جهات-الاتصال"
   ],
-  "author": "Contact Cleaner Tool",
-  "license": "MIT",
+  "author": {
+    "name": "محمد شعبان",
+    "email": "contact@mohamedshaban.dev",
+    "url": "https://wa.me/201121891913",
+    "nationality": "مصري",
+    "country": "مصر",
+    "whatsapp": "+201121891913"
+  },
+  "license": "Commercial",
   "repository": {
     "type": "git",
     "url": "https://github.com/m0shaban/smart-contact-cleaner.git"
@@ -38,5 +48,60 @@
     "node": ">=14.0.0"
   },
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "pwa": {
+    "name": "أداة تنظيف جهات الاتصال الذكية",
+    "short_name": "تنظيف جهات الاتصال",
+    "description": "أداة مجانية لتنظيف جهات الاتصال وحذف الأرقام المكررة",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#667eea",
+    "theme_color": "#667eea",
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  },
+  "features": [
+    "PWA Support",
+    "Offline Functionality",
+    "Arabic Language Support",
+    "English Language Support",
+    "CSV Import/Export",
+    "VCF Import/Export",
+    "Duplicate Detection",
+    "Contact Cleaning",
+    "Android Compatibility",
+    "SEO Optimized",
+    "Responsive Design"
+  ],
+  "languages": [
+    "Arabic",
+    "English"
+  ],
+  "supportedFormats": [
+    "CSV",
+    "VCF"
+  ],
+  "compatibility": [
+    "Android",
+    "iOS",
+    "Chrome",
+    "Firefox",
+    "Safari",
+    "Edge"
+  ]
 } 
