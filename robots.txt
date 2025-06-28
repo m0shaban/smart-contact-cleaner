@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://[username].github.io/contact-cleaner/sitemap.xml
+Sitemap: https://m0shaban.github.io/smart-contact-cleaner/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1 

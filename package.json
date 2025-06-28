@@ -1,5 +1,5 @@
 {
-  "name": "contact-cleaner",
+  "name": "smart-contact-cleaner",
   "version": "1.0.0",
   "description": "Free contact cleaner tool to remove duplicate phone numbers and contacts without names. Export VCF and CSV files compatible with Android.",
   "main": "index.html",
@@ -28,11 +28,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/[username]/contact-cleaner.git"
+    "url": "https://github.com/m0shaban/smart-contact-cleaner.git"
   },
-  "homepage": "https://[username].github.io/contact-cleaner/",
+  "homepage": "https://m0shaban.github.io/smart-contact-cleaner/",
   "bugs": {
-    "url": "https://github.com/[username]/contact-cleaner/issues"
+    "url": "https://github.com/m0shaban/smart-contact-cleaner/issues"
   },
   "engines": {
     "node": ">=14.0.0"
