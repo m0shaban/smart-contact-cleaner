@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://[username].github.io/contact-cleaner/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 

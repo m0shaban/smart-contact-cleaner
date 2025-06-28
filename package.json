@@ -1,0 +1,42 @@
+{
+  "name": "contact-cleaner",
+  "version": "1.0.0",
+  "description": "Free contact cleaner tool to remove duplicate phone numbers and contacts without names. Export VCF and CSV files compatible with Android.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to GitHub Pages manually'"
+  },
+  "keywords": [
+    "contact-cleaner",
+    "remove-duplicate-contacts",
+    "organize-contacts",
+    "contact-management",
+    "vcf-export",
+    "csv-export",
+    "android-contacts",
+    "phone-number-cleaner",
+    "duplicate-remover",
+    "contact-organizer",
+    "تنظيف-جهات-الاتصال",
+    "حذف-الأرقام-المكررة",
+    "تنظيم-جهات-الاتصال"
+  ],
+  "author": "Contact Cleaner Tool",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[username]/contact-cleaner.git"
+  },
+  "homepage": "https://[username].github.io/contact-cleaner/",
+  "bugs": {
+    "url": "https://github.com/[username]/contact-cleaner/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+} 
