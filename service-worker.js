@@ -1,4 +1,4 @@
-// Service Worker for Smart Contact Cleaner Tool
+// Contact Cleaner Tool Service Worker
 // Developed by Mohamed Shaban - Egypt
 // WhatsApp: +201121891913
 // License: Commercial Use
@@ -171,7 +171,4 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('Service Worker loaded successfully');
-console.log('Developer: Mohamed Shaban - Egypt');
-console.log('WhatsApp: +201121891913');
-console.log('License: Commercial Use'); 
+console.log('Service Worker loaded successfully'); 

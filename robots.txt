@@ -1,13 +1,10 @@
+# Contact Cleaner Tool Robots.txt
+# Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://m0shaban.github.io/smart-contact-cleaner/sitemap.xml
-
-# Contact Information
-# Developer: Mohamed Shaban - Egypt
-# WhatsApp: +201121891913
-# License: Commercial Use
+Sitemap: https://mohamedshaban-dev.github.io/contact-cleaner/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

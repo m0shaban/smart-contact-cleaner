@@ -1,13 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Smart Contact Cleaner Tool</title>
-    <meta name="description" content="The requested page was not found. Return to Smart Contact Cleaner Tool. Developed by Mohamed Shaban - Egypt">
+    <title>404 - Page Not Found | Contact Cleaner Tool</title>
+    <meta name="description" content="The requested page was not found. Return to Smart Contact Cleaner Tool">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg">
+    <link rel="icon" type="image/png" href="../icons/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://m0shaban.github.io/smart-contact-cleaner/en/404.html">
+    
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 1.5rem;
+            color: #374151;
+            margin: 1rem 0 2rem 0;
+        }
+        
+        .error-description {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .back-home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .language-switch {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        
+        .language-switch a {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .language-switch a:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,148 +90,22 @@
             <a href="../404.html">العربية</a>
         </div>
         
-        <header>
-            <div class="developer-info">
-                <span class="flag">🇪🇬</span>
-                <span class="dev-name">Developed by: Mohamed Shaban - Egypt</span>
-                <a href="https://wa.me/201121891913" class="whatsapp-link" target="_blank">
-                    <span class="whatsapp-icon">📱</span>
-                    <span class="phone-number">01121891913</span>
-                </a>
-            </div>
-            <h1>🧹 Smart Contact Cleaner Tool</h1>
-        </header>
-
-        <main>
-            <div class="error-page">
-                <div class="error-content">
-                    <div class="error-icon">😕</div>
-                    <h2>404 - Page Not Found</h2>
-                    <p>Sorry, the page you are looking for does not exist or has been moved.</p>
-                    
-                    <div class="error-actions">
-                        <a href="/" class="btn btn-primary">🏠 Back to Home</a>
-                        <a href="/en/" class="btn btn-secondary">🌍 English Version</a>
-                    </div>
-                    
-                    <div class="error-help">
-                        <h3>🔍 Are you looking for:</h3>
-                        <ul>
-                            <li><a href="/">Main Contact Cleaner Tool</a></li>
-                            <li><a href="/en/">English Version</a></li>
-                            <li><a href="/sample_contacts.csv">Sample CSV File</a></li>
-                            <li><a href="/sample_contacts.vcf">Sample VCF File</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="developer-section">
-                        <h3>👨‍💻 Developer Information</h3>
-                        <div class="developer-card">
-                            <div class="dev-avatar">🇪🇬</div>
-                            <div class="dev-details">
-                                <h4>Mohamed Shaban</h4>
-                                <p>Egyptian developer specialized in web application development</p>
-                                <div class="dev-contact">
-                                    <a href="https://wa.me/201121891913" class="contact-link whatsapp" target="_blank">
-                                        <span class="contact-icon">📱</span>
-                                        <span class="contact-text">WhatsApp: 01121891913</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-message">😕 Sorry, Page Not Found</h2>
+            <p class="error-description">
+                The page you are looking for doesn't exist or has been moved to another location.
+            </p>
+            <a href="/en/" class="back-home">🏠 Back to Homepage</a>
+        </div>
+        
         <footer>
             <div class="footer-content">
-                <p>🧹 Smart Contact Cleaner Tool - Android Compatible | Free Contact Cleaning</p>
-                <p>👨‍💻 Developed by: Mohamed Shaban - Egypt 🇪🇬</p>
+                <p>🧹 Smart Contact Cleaner Tool - Android Compatible</p>
                 <p>📱 Contact: <a href="https://wa.me/201121891913" target="_blank">01121891913</a></p>
                 <p>📄 License: Commercial Use</p>
             </div>
         </footer>
     </div>
-
-    <style>
-        .error-page {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        
-        .error-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .error-icon {
-            font-size: 6rem;
-            margin-bottom: 20px;
-        }
-        
-        .error-page h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 2rem;
-        }
-        
-        .error-page p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .error-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .error-help {
-            background: #f8f9ff;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-        
-        .error-help h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        
-        .error-help ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .error-help li {
-            margin-bottom: 10px;
-        }
-        
-        .error-help a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .error-help a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .error-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .error-help {
-                text-align: center;
-            }
-        }
-    </style>
 </body>
 </html> 

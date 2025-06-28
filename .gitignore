@@ -1,7 +1,4 @@
-# Smart Contact Cleaner Tool - .gitignore
-# Developed by Mohamed Shaban - Egypt
-# WhatsApp: +201121891913
-# License: Commercial Use
+# Contact Cleaner Tool - Git Ignore File
 
 # Dependencies
 node_modules/
@@ -12,14 +9,8 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
-out/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.tgz
+*.tar.gz
 
 # IDE files
 .vscode/
@@ -50,8 +41,16 @@ pids
 # Coverage directory used by tools like istanbul
 coverage/
 
-# nyc test coverage
-.nyc_output
+# Temporary folders
+tmp/
+temp/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Dependency directories
 jspm_packages/
@@ -70,10 +69,6 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
-
-# Temporary files
-tmp/
-temp/
 
 # Backup files
 *.bak

@@ -1,48 +1,36 @@
 {
-  "name": "smart-contact-cleaner",
+  "name": "contact-cleaner-tool",
   "version": "1.0.0",
-  "description": "أداة تنظيف جهات الاتصال الذكية - حذف الأرقام المكررة وتنظيم جهات الاتصال للأندرويد. مطور بواسطة محمد شعبان - مصر",
+  "description": "أداة تنظيف جهات الاتصال الذكية - حذف الأرقام المكررة وتنظيم جهات الاتصال للأندرويد",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",
-    "build": "echo 'No build step required for static site'",
-    "deploy": "echo 'Deploy to GitHub Pages'",
-    "test": "echo 'No tests specified'",
-    "lint": "echo 'No linting configured'"
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Deploy to GitHub Pages'"
   },
   "keywords": [
     "contact-cleaner",
-    "duplicate-removal",
-    "vcf",
-    "csv",
-    "android",
-    "contacts",
+    "duplicate-remover",
+    "vcf-cleaner",
+    "csv-cleaner",
+    "android-contacts",
     "pwa",
-    "arabic",
-    "egypt",
-    "محمد-شعبان",
-    "تنظيف-جهات-الاتصال",
-    "حذف-الأرقام-المكررة",
-    "تنظيم-جهات-الاتصال",
-    "تصدير-جهات-الاتصال"
+    "progressive-web-app"
   ],
   "author": {
     "name": "محمد شعبان",
     "email": "contact@mohamedshaban.dev",
-    "url": "https://wa.me/201121891913",
-    "nationality": "مصري",
-    "country": "مصر",
-    "whatsapp": "+201121891913"
+    "url": "https://mohamedshaban.dev"
   },
-  "license": "Commercial",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/m0shaban/smart-contact-cleaner.git"
+    "url": "https://github.com/mohamedshaban-dev/contact-cleaner.git"
   },
-  "homepage": "https://m0shaban.github.io/smart-contact-cleaner/",
+  "homepage": "https://mohamedshaban-dev.github.io/contact-cleaner/",
   "bugs": {
-    "url": "https://github.com/m0shaban/smart-contact-cleaner/issues"
+    "url": "https://github.com/mohamedshaban-dev/contact-cleaner/issues"
   },
   "engines": {
     "node": ">=14.0.0"
