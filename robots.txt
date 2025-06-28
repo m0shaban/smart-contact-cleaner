@@ -4,10 +4,24 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mohamedshaban-dev.github.io/contact-cleaner/sitemap.xml
+Sitemap: https://m0shaban.github.io/smart-contact-cleaner/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Disallow specific files
+Disallow: /service-worker.js
+Disallow: /manifest.json
+
+# Allow important files
+Allow: /icons/
+Allow: /sample_contacts.csv
+Allow: /sample_contacts.vcf
+Allow: /googlea3ab5177fd6782c0.html
+
+# Additional SEO directives
+# Host: m0shaban.github.io
+# Clean-param: utm_source&utm_medium&utm_campaign
 
 # Allow all major search engines
 User-agent: Googlebot
